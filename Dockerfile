@@ -1,3 +1,5 @@
+# syntax=docker.io/docker/dockerfile:1.6
+
 ARG ALPINE_VERSION=3.18
 ARG SSHPASS_VERSION=1.10
 
