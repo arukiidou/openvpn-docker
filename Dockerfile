@@ -10,6 +10,5 @@ RUN apk add --no-cache openvpn~=2.6 tzdata~=2024a git~=2.43
 LABEL org.opencontainers.image.authors="arukiidou <arukiidou@yahoo.co.jp>"
 LABEL org.opencontainers.image.url="https://github.com/arukiidou/openvpn-docker"
 LABEL org.opencontainers.image.documentation="Build openvpn docker image."
-LABEL org.opencontainers.image.source="https://github.com/arukiidou/openvpn-docker/blob/main/Dockerfile"
 LABEL org.opencontainers.image.version="alpine${ALPINE_VERSION}"
 LABEL org.opencontainers.image.licenses="MIT"
