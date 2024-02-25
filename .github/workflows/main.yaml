@@ -10,8 +10,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        alpine: ['3.18', '3.19']
-        sshpass: ['1.10']
+        alpine: ['3.19']
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,21 +24,20 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and push ${{ matrix.sshpass }}-alpine${{ matrix.alpine }}
+      - name: Build and push alpine${{ matrix.alpine }}
         uses: docker/build-push-action@v5
         with:
           context: .
           platforms: linux/amd64,linux/arm64
           outputs: type=registry,oci-mediatypes=true
           tags: |
-            arukiidou/sshpass:${{ matrix.sshpass }}-alpine${{ matrix.alpine }}
-            arukiidou/sshpass:${{ matrix.sshpass }}
-            arukiidou/sshpass:latest
+            arukiidou/openvpn-docker:-alpine${{ matrix.alpine }}
+            arukiidou/openvpn-docker:latest
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: arukiidou/sshpass
+          repository: arukiidou/openvpn-docker
       - name: List tags
         run: docker image ls
