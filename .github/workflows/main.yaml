@@ -31,7 +31,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           outputs: type=registry,oci-mediatypes=true
           tags: |
-            arukiidou/openvpn-docker:-alpine${{ matrix.alpine }}
+            arukiidou/openvpn-docker:alpine${{ matrix.alpine }}
             arukiidou/openvpn-docker:latest
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v4
