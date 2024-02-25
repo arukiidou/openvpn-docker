@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        alpine: ['3.18']
+        alpine: ['3.18', '3.19']
         sshpass: ['1.10']
     runs-on: ubuntu-latest
     steps:
